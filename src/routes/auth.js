@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// Simulación de usuarios en memoria (no recomendado para producción)
+// Simulación de usuarios en memoria
 const users = [
   { username: 'admin', password: 'password123' },
   { username: 'user', password: '12345' }

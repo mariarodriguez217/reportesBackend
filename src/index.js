@@ -3,16 +3,16 @@ const express = require('express');
 
 // Inicializar la aplicación Express
 const app = express();
+app.use(express.json());
 
 // Definir el puerto para el servidor
 const PORT = 3000;
 
-// Ruta principal
-//app.get('/', (req, res) => {
-  //  res.send('¡Hola Mundo con Node.js y Express!');
-//});
 //Routes
+const authRoutes = require('./routes/auth');
 app.use(require('./routes/index'));
+app.use('/auth', authRoutes);
+
 // Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
